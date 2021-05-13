@@ -12,6 +12,14 @@
       magni officiis eum porro possimus? Non, eos. Adipisci, blanditiis, maxime
       voluptas modi facilis nihil aliquam dolorem quae voluptates cumque veniam?
     </p>
-    <p>There are currently {{meeting_count}} meetings in the database</p>
+    <h2>Meetings</h2>
+    <ul>
+      {% for meeting in meetings %}
+      <li>
+        <a href="{% url 'detail' meeting.id %}"> {{ meeting.title }} </a>
+      </li>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'rooms' %}">View all rooms</a>
   </body>
 </html>
